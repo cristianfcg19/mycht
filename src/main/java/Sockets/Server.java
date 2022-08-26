@@ -62,9 +62,15 @@ public class Server extends Thread {
 
     private void  agregarDatosAChatDisplaySend(String mensaje){
     System.out.println("entra a agregar DATOS CHAT!!!");
-    System.out.println("el mensaje a agregarDatos chat es +"+mensaje+"+");
+    System.out.println("el mensaje SALE del chat es +"+mensaje+"+");
     form.JTextAreaaAreaTextoChatDisplay.setText(form.JTextAreaaAreaTextoChatDisplay.getText()+"local-> :"+mensaje+"\n");
-    mensajeRecibido="";
+    mensajeAEnviarServer="";
+}
+        private void  agregarDatosAChatDisplayReceive(String mensaje){
+    System.out.println("ENTRA DATOS al chat");
+    System.out.println("el mensaje ENTRA chat es +"+mensaje+"+");
+    form.JTextAreaaAreaTextoChatDisplay.setText(form.JTextAreaaAreaTextoChatDisplay.getText()+"remote-> :"+mensaje+"\n");
+    mensajeAEnviarServer="";
 }
     
     public void run() {

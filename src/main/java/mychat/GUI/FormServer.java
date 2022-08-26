@@ -19,7 +19,7 @@ public class FormServer extends javax.swing.JFrame {
     }
     public void insertchat(String text)
     {
-        areaTextoChat.setText(text);
+        JTextAreaaAreaTextoChatDisplay.setText(text);
     }
     
     /**
@@ -45,12 +45,12 @@ public class FormServer extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        msg = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jTextFieldEnviarMensaje = new javax.swing.JTextField();
+        jButtonEnviarMensaje = new javax.swing.JButton();
         informacion = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        areaTextoChat = new javax.swing.JTextArea();
+        JTextAreaaAreaTextoChatDisplay = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Server");
@@ -65,16 +65,21 @@ public class FormServer extends javax.swing.JFrame {
 
         jLabel1.setText("Mensaje");
 
-        msg.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextFieldEnviarMensaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEnviarMensajeActionPerformed(evt);
+            }
+        });
+        jTextFieldEnviarMensaje.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                msgKeyReleased(evt);
+                jTextFieldEnviarMensajeKeyReleased(evt);
             }
         });
 
-        jButton1.setText("Enviar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEnviarMensaje.setText("Enviar");
+        jButtonEnviarMensaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonEnviarMensajeActionPerformed(evt);
             }
         });
 
@@ -87,66 +92,66 @@ public class FormServer extends javax.swing.JFrame {
             }
         });
 
-        areaTextoChat.setColumns(20);
-        areaTextoChat.setRows(5);
-        jScrollPane1.setViewportView(areaTextoChat);
+        JTextAreaaAreaTextoChatDisplay.setColumns(20);
+        JTextAreaaAreaTextoChatDisplay.setRows(5);
+        jScrollPane1.setViewportView(JTextAreaaAreaTextoChatDisplay);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41)
-                                .addComponent(jButton2)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(87, 87, 87)
-                                .addComponent(informacion))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addGap(142, 142, 142)
+                        .addComponent(informacion))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
+                            .addComponent(jTextFieldEnviarMensaje)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(277, 277, 277)
+                        .addComponent(jButtonEnviarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(informacion))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(msg, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(informacion)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(126, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jButton2)))
+                .addGap(36, 36, 36)
+                .addComponent(jTextFieldEnviarMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonEnviarMensaje)
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void msgKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_msgKeyReleased
+    private void jTextFieldEnviarMensajeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldEnviarMensajeKeyReleased
 
-    }//GEN-LAST:event_msgKeyReleased
+    }//GEN-LAST:event_jTextFieldEnviarMensajeKeyReleased
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonEnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarMensajeActionPerformed
 
-        sv.setMsn(msg.getText());
-    }//GEN-LAST:event_jButton1ActionPerformed
+        sv.setMensajeAEnviar(jTextFieldEnviarMensaje.getText());
+        jTextFieldEnviarMensaje.setText("");
+        
+    }//GEN-LAST:event_jButtonEnviarMensajeActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
        
@@ -160,6 +165,10 @@ public class FormServer extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextFieldEnviarMensajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEnviarMensajeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEnviarMensajeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,12 +206,12 @@ public class FormServer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JTextArea areaTextoChat;
+    public javax.swing.JTextArea JTextAreaaAreaTextoChatDisplay;
     public javax.swing.JLabel informacion;
-    public javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    public javax.swing.JButton jButtonEnviarMensaje;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTextField msg;
+    public javax.swing.JTextField jTextFieldEnviarMensaje;
     // End of variables declaration//GEN-END:variables
 }

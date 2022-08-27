@@ -30,7 +30,7 @@ public class Server extends Thread {
     DataOutputStream salida;
     DataInputStream entrada;
     String mensajeAEnviarServer = "";
-    String mensajeRecibido;
+    String mensajeRecibido = "";
     Socket server = new Socket();
     String[] args;
     int puerto;
@@ -87,7 +87,7 @@ public class Server extends Thread {
 
                 System.out.println("si se conecta");
                 form.informacion.setText("Se conecto si hay un usuario conectado");
-                //entrada = new DataInputStream(server.getInputStream());//esta linea se va a ir
+                entrada = new DataInputStream(server.getInputStream());//esta linea se va a ir
                 salida = new DataOutputStream(server.getOutputStream());
                 datosQueSevanADesplegarEnChat = "";
 
@@ -112,7 +112,7 @@ public class Server extends Thread {
                 }*/
 
                     
-                    //mensajeRecibido = entrada.readUTF();//esto psiblemente se quite 
+                    mensajeRecibido = entrada.readUTF();//esto psiblemente se quite 
 
 
                     /*
